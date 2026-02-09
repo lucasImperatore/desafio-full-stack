@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add new book</title>
+</head>
+<body>
+    <h1>
+        Adicione seu novo livro   
+    </h1>
+    <form action="/books" method="POST">
+
+    <div id="bookName">
+        <label>Nome do livro</label>
+        <input type="text" name="book_name" placeholder="Eragon"> 
+    </div>
+
+    <div id="authorsName">
+        <label>Nome do Autor</label>
+        <input type="text" name="author_name" placeholder="Christopher Paolini"> 
+    </div>
+
+    <div id="Ean">
+        <label>EAN</label>
+        <input type="number" name="ean" placeholder="7892024532048"> 
+    </div>
+
+    <div id="scoreValue">
+        <label>Nota</label>
+        <input type="number" name="score" placeholder="8"> 
+    </div>
+    <div id="stats">
+    <p>Status</p>
+    
+    <input type="radio" id="reading" name="stats" value="lendo">
+    <label for="reading">Lendo</label>
+
+    <input type="radio" id="read" name="stats" value="lido">
+    <label for="read">Lido</label>
+
+    <input type="radio" id="droped" name="stats" value="abandonado">
+    <label for="droped">Abandonado</label>
+</div>
+    
+    <button type="submit">Cadastrar</button>
+</form>
+</body>
+</html>
