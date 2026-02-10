@@ -2,8 +2,6 @@ const form = document.getElementById("bookForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  
-
   const book_name = document.getElementById("book_name").value;
   const author_name = document.getElementById("author_name").value;
   const ean = document.getElementById("ean").value;
@@ -32,14 +30,11 @@ form.addEventListener("submit", async (e) => {
 
 
 function goBack(){
-  if (response.ok) {
-    alert("Livro cadastrado!");
-    window.location.href = "index.html"; // Volta para a página principal
-  } else {
-    alert("Erro ao cadastrar livro.");
-  }
+    window.location.href = "books.html"; // Volta para a página principal  
+};
 
-
+function goHome() {
+  window.location.href = "index.html";
 }
-// Se o servidor respondeu com sucesso (status entre 200-299)
+
 

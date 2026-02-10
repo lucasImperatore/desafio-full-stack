@@ -113,3 +113,7 @@ async function executarUpdate(id, nota, status) {
 }
 
 loadBooks();
+
+function goHome(){
+  window.location.href="index.html"
+}
