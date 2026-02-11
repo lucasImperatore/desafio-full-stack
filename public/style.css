@@ -1,72 +1,113 @@
+/* 1. CONFIGURAÇÕES GERAIS (Afeta ambas as páginas) */
 body {
-  /* Corrija o caminho: use barras normais e verifique se o arquivo está na mesma pasta */
-  background-image: url("background.png");
-  
- background-image: url("background.png");
+    background-image: url("background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     min-height: 100vh;
-    color: white; /
-  min-height: 100vh;
+    margin: 0;
     color: white;
-  
-  margin: 0;
-  padding: 0;
-  height: 100vh; /* Força o corpo a ter a altura da tela */
-  display: flex;
-  justify-content: center; /* Centraliza horizontal */
-  align-items: center;     /* Centraliza vertical */
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;     /* Centraliza horizontalmente */
 }
 
-/* Container para organizar os botões */
-.button-group {
-  display: flex;
-  gap: 20px; /* Espaço entre os botões */
-}
-
-/* Estilização opcional para os botões ficarem mais modernos */
-.btn-custom {
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 2px solid white;
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  transition: 0.3s;
-}
-
-.btn-custom:hover {
-  background: white;
-  color: #2c2c54;
-}
-
-.glass-card {
-    background: rgba(0, 0, 0, 0.6); /* Fundo preto com 60% de opacidade */
-    backdrop-filter: blur(8px);    /* Desfoca levemente o fundo atrás do card */
+/* 2. FORMATAÇÃO DA PÁGINA NEWBOOK (Usando seus IDs) */
+form {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilização dos itens da lista (ajuste isso no seu books.js se necessário) */
-#bookList li {
-    background: rgba(255, 255, 255, 0.05);
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Estilização dos blocos de input usando seus IDs */
+#bookName, #authorsName, #Ean, #scoreValue, #stats {
     margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    border-left: 5px solid #7d5fff; /* Uma corzinha para destacar cada livro */
-    list-style: none;
+    text-align: left;
 }
 
-#bookList b, #bookList strong {
-    color: #a29bfe; /* Cor de destaque para os rótulos (Nome, Autor, etc) */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #a29bfe; /* Roxo claro para destacar */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    outline: none;
+}
+
+/* Ajuste específico para o campo de Status */
+#stats p {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #a29bfe;
+}
+
+#stats label {
+    display: inline-block; /* Coloca os rádios lado a lado */
+    margin-right: 15px;
+    color: white;
+    font-weight: normal;
+}
+
+/* 3. BOTÕES (Compatível com Index e NewBook) */
+button {
+    width: 100%; /* No form, o botão ocupa a largura total */
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: #2c2c54;
+}
+
+/* BOTÃO HOME (Que está fora do form)  */
+div > button {
+    margin-top: 20px;
+    max-width: 200px;
+    border-radius: 8px; /* Botão Home menor que o formulário */
+}
+
+/* MANTENDO A PÁGINA INDEX FUNCIONAL */
+.button-group {
+    display: flex;
+    gap: 20px;
+    border-radius: 8px;
+}
+
+.btn-custom {
+    /* Reaproveita o estilo geral de button, mas permite customização extra se precisar */
+    padding: 15px 30px; 
+    border-radius: 5px;
 }

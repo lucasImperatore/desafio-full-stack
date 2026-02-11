@@ -11,7 +11,7 @@ form.addEventListener("submit", async (e) => {
   const statsElement = document.querySelector('input[name="stats"]:checked');
   const stats = statsElement ? statsElement.value : "Lendo";
 
-  if (book_name && author_name) {
+  if (book_name && author_name && book_name !="" && author_name !="") {
     await fetch("/arquive", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -24,13 +24,23 @@ form.addEventListener("submit", async (e) => {
       }),
     });
   } else {
+    alert("Preencha os campos Nome e Autor")
   }
   form.reset(); // limpa os campos com a função nativa para tags form
 });
 
 
 function goBack(){
-    window.location.href = "books.html"; // Volta para a página principal  
+   const book_name = document.getElementById("book_name").value;
+    const author_name = document.getElementById("author_name").value;
+  if(author_name == "" && book_name ==""){
+     alert("Preencha os campos Nome e Autor")
+    
+  }else{
+   window.location.href = "index.html"; // Volta para a página principal
+  }
+
+      
 };
 
 function goHome() {

@@ -39,8 +39,8 @@ async function loadBooks() {
                 <div>
                     <strong>Status:</strong> ${Id.stats || "Lendo"}
                 </div>
-                <button class="btn-delete" style="margin-top: 10px;">Deletar Livro</button>
-                <button class="btn-update" style="margin-top: 10px;">Atualizar</button>
+                <button class="btn-delete btn-action" style="margin-top: 10px;">Deletar Livro</button>
+                <button class="btn-update btn-action" style="margin-top: 10px;">Atualizar</button>
                 <hr>
             `;
             const deleteBtn = listItem.querySelector(".btn-delete");
@@ -54,8 +54,11 @@ async function loadBooks() {
     const novaNota = prompt("Insira a nova nota:", Id.score);
     const novoStatus = prompt("Insira o novo status (Ex: Lido, Lendo, Abandonado):", Id.stats);
 
-    if (novaNota !== null && novoStatus !== null) {
+    if (novaNota !== null && novoStatus !== null && novaNota <11 && novaNota == 0) {
         await executarUpdate(Id.id, novaNota, novoStatus);
+    }else{
+      alert("Nova nota deve estar entre 1 e 10, o número será considerado como aguardando avaliação!" )
+      return
     }
 };
 
