@@ -5,9 +5,7 @@ form.addEventListener("submit", async (e) => {
   const book_name = document.getElementById("book_name").value;
   const author_name = document.getElementById("author_name").value;
   const ean = document.getElementById("ean").value;
-  const score = document
-    .getElementById("scoreValue")
-    .querySelector("input").value;
+  const score = document.getElementById("scoreValue").querySelector("input").value;
   const statsElement = document.querySelector('input[name="stats"]:checked');
   const stats = statsElement ? statsElement.value : "Lendo";
 
@@ -38,9 +36,7 @@ function goBack(){
     
   }else{
    window.location.href = "index.html"; // Volta para a página principal
-  }
-
-      
+  }     
 };
 
 function goHome() {

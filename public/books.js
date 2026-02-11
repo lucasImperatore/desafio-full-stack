@@ -93,7 +93,7 @@ async function executarUpdate(id, nota, status) {
         const response = await fetch(`http://localhost:3000/arquive/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json" // OBRIGATÓRIO para enviar JSON
+                "Content-Type": "application/json" 
             },
             body: JSON.stringify({
                 score: nota,
